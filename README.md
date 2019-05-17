@@ -27,9 +27,11 @@ Figure 4: Experimental prototype of the general planar 3-RPR parallel mechanism 
 
 ______________________________________________________________________________________________________________________
 
-The project contains the following folders:
+The project currently contains the following folders:
 - General Code
 - Static Example
+- pictures
+- video
 
 In the folder "General Code", there are a matlab file "General_3RPR_Parallel_Mechanism.m", and a matlab function "Orientation_Based_Solution.m" provided.
 The file "General_3RPR_Parallel_Mechanism.m" is a runable file where you can enter different base and manipulator platform joints' positions and test the approach for calculating the assembly modes when using exclusively the linear actuator's orientations.
