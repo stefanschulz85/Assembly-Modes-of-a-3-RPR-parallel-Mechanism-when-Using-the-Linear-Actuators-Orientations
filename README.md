@@ -3,6 +3,13 @@ The direct kinematics problem is the problem of finding the actual position and 
 
 ![General planar 3-RPR parallel mechanism with the three base platform joints A, B, and C and the three manipulator platform joints D, E, and F. The pose of the manipulator platform is given by the position of joint D and the platform’s orientation g with respect to the shown coordinate system.](https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/blob/master/pictures/General_3RPR.png)
 
+![Assembly modes (shown in blue, red, green, orange, yellow, and brown) for the manipulator platform of the general planar 3-RPR parallel mechanism when using the linear actuators’ lengths.](https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/blob/master/pictures/Assembly_Modes_C.png)
+
+![The two assembly modes (shown in blue and red) for the manipulator platform of the general planar 3-RPR parallel mechanism when using the linear actuators’ orientations.](https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/blob/master/pictures/Assembly_Modes_A.png)
+
+
+
+
 The project contains the following folders:
 - General Code
 - Static Example
@@ -20,4 +27,4 @@ The Matlab-Script runs as follows:
 In the folder "Static Example", there are two files ("Evaluation.m" and "Orientation_Based_Solution.m") and a folder with the experimental results of ten static experiments where 500 measurements were taken with the IMUs.
 In the runable matlab file "Evaluation.m", you can evaluate the en different static poses of the 3-RPR parallel mechanism with given base and manipulator platform joints' positions. The matlab file reads the measured linear actuators orientation angles for the static poses and then calculates the results with the matlab function "Orientation_Based_Solution.m". The matlab file then compares the results of the raw linear actuators orientation angles, the Kalman-filtered orientation angles, and the complementary filtered orientation angles with the actual results that were obtained by image processing. The investigated pose, and the errors for each axis as boxplots were displayed in a separate figures for every investigated pose. 
 
-![Experimental prototype of the general planar 3-RPR parallel mechanism with IMUs mounted on the linear actuators and an Arduino Uno with a display integrated in the base to calculate and show the two assembly modes of the manipulator platform.](https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/tree/master/pictures/IMG_9786_2.JPG)
+![Experimental prototype of the general planar 3-RPR parallel mechanism with IMUs mounted on the linear actuators and an Arduino Uno with a display integrated in the base to calculate and show the two assembly modes of the manipulator platform.](https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/blob/master/pictures/IMG_9786_2.JPG)
