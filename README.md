@@ -7,6 +7,8 @@ by using solely the linear actuators' orientations can be found [here]. The vide
 [download link]:https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/archive/master.zip
 [my ResearchGate account]:https://www.researchgate.net/profile/Stefan_Schulz11
 
+______________________________________________________________________________________________________________________
+
 The direct kinematics problem is the problem of finding the actual position and orientation, also known as pose, of the moveable manipulator platform with respect to the fixed base platform from the active joints’ coordinates. In general, this problem has multiple solutions. For example, for the general planar 3-RPR parallel mechanism, where three linear actuators, that is, active prismatic joints (P-joints), connect the passive revolute joints (R-joints) of the fixed base platform with those of the moveable manipulator platform, By using the orientation angles of the linear actuators, provided, for example, by inertial measurement units, only two assembly modes exist that can be calculated analytically.
 
 <img src="https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/blob/master/pictures/General_3RPR.png" width="253" height="275" title="General planar 3-RPR parallel mechanism with the three base platform joints A, B, and C and the three manipulator platform joints D, E, and F. The pose of the manipulator platform is given by the position of joint D and the platform’s orientation g with respect to the shown coordinate system.">
@@ -45,3 +47,6 @@ The Matlab-Script runs as follows:
 
 In the folder "Static Example", there are two files ("Evaluation.m" and "Orientation_Based_Solution.m") and a folder with the experimental results of ten static experiments where 500 measurements were taken with the IMUs.
 In the runable matlab file "Evaluation.m", you can evaluate the en different static poses of the 3-RPR parallel mechanism with given base and manipulator platform joints' positions. The matlab file reads the measured linear actuators orientation angles for the static poses and then calculates the results with the matlab function "Orientation_Based_Solution.m". The matlab file then compares the results of the raw linear actuators orientation angles, the Kalman-filtered orientation angles, and the complementary filtered orientation angles with the actual results that were obtained by image processing. The investigated pose, and the errors for each axis as boxplots were displayed in a separate figures for every investigated pose. 
+
+In the folder "picture", there are relevant pictures shown, for example in this "readme.md" file.
+The folder "video" contains the demonstration video mentioned above. Sadly it cannot be played in this "readme.md" file and neither by clicking on the video in the folder. By downloading it, as mentioned above, it is however possible.
