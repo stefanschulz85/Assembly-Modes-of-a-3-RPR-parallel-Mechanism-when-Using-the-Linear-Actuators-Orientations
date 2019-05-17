@@ -3,7 +3,7 @@ The direct kinematics problem is the problem of finding the actual position and 
 
 Figure 1: General planar 3-RPR parallel mechanism with the three base platform joints A, B, and C and the three manipulator platform joints D, E, and F. The pose of the manipulator platform is given by the position of joint D and the platform’s orientation g with respect to the shown coordinate system.
 
-![General planar 3-RPR parallel mechanism with the three base platform joints A, B, and C and the three manipulator platform joints D, E, and F. The pose of the manipulator platform is given by the position of joint D and the platform’s orientation g with respect to the shown coordinate system.,20%](https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/blob/master/pictures/General_3RPR.png ,20%)
+![General planar 3-RPR parallel mechanism with the three base platform joints A, B, and C and the three manipulator platform joints D, E, and F. The pose of the manipulator platform is given by the position of joint D and the platform’s orientation g with respect to the shown coordinate system.|512x397,20%](https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/blob/master/pictures/General_3RPR.png)
 
 Figure 2: Assembly modes (shown in blue, red, green, orange, yellow, and brown) for the manipulator platform of the general planar 3-RPR parallel mechanism when using the linear actuators’ lengths.
 
