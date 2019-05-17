@@ -15,4 +15,5 @@ The Matlab-Script runs as follows:
 5. The function "Orientation_Based_Solution.m" calculates the two possible solutions of the direct kinematics problem for the constants (c,d,l) and the linear actuator's orientation angles (A,B,C).
 6. The results are shown in Figures 1(b) and 1(c).
 
-In the folder "Static Example", ...
+In the folder "Static Example", there are two files ("Evaluation.m" and "Orientation_Based_Solution.m") and a folder with the experimental results of ten static experiments where 500 measurements were taken with the IMUs.
+In the runable matlab file "Evaluation.m", you can evaluate the en different static poses of the 3-RPR parallel mechanism with given base and manipulator platform joints' positions. The matlab file reads the measured linear actuators orientation angles for the static poses and then calculates the results with the matlab function "Orientation_Based_Solution.m". The matlab file then compares the results of the raw linear actuators orientation angles, the Kalman-filtered orientation angles, and the complementary filtered orientation angles with the actual results that were obtained by image processing. The investigated pose, and the errors for each axis as boxplots were displayed in a separate figures for every investigated pose. 
