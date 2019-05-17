@@ -5,7 +5,7 @@ The project contains the following folders:
 - General Code
 - Static Example
 
-In the folder "Gener Code", there are a matlab file "General_3RPR_Parallel_Mechanism.m", and a matlab function "Orientation_Based_Solution.m" provided.
+In the folder "General Code", there are a matlab file "General_3RPR_Parallel_Mechanism.m", and a matlab function "Orientation_Based_Solution.m" provided.
 The file "General_3RPR_Parallel_Mechanism.m" is a runable file where you can enter different base and manipulator platform joints' positions and test the approach for calculating the assembly modes when using exclusively the linear actuator's orientations.
 The Matlab-Script runs as follows:
 1. Enter the positions of the base and the manipulator platform joints.
@@ -15,4 +15,4 @@ The Matlab-Script runs as follows:
 5. The function "Orientation_Based_Solution.m" calculates the two possible solutions of the direct kinematics problem for the constants (c,d,l) and the linear actuator's orientation angles (A,B,C).
 6. The results are shown in Figures 1(b) and 1(c).
 
-
+In the folder "Static Example", ...
