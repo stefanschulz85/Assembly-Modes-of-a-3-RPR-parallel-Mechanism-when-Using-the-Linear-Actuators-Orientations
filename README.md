@@ -1,9 +1,10 @@
 # Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations
 
 The video of the 3-RPR parallel mechanism and the performance of the sensor concept for solving the direct kinematics problem
-by using solely the linear actuators' orientations can be found [here].
+by using solely the linear actuators' orientations can be found [here]. The video can be watched, for example, by downloading the entired project or by using this [download link].
 
 [here]:https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/blob/master/video/Demonstration_Video_3RPR.mp4
+[download link]:https://github.com/stefanschulz85/Assembly-Modes-of-a-3-RPR-parallel-Mechanism-when-Using-the-Linear-Actuators-Orientations/archive/master.zip
 
 The direct kinematics problem is the problem of finding the actual position and orientation, also known as pose, of the moveable manipulator platform with respect to the fixed base platform from the active joints’ coordinates. In general, this problem has multiple solutions. For example, for the general planar 3-RPR parallel mechanism, where three linear actuators, that is, active prismatic joints (P-joints), connect the passive revolute joints (R-joints) of the fixed base platform with those of the moveable manipulator platform, By using the orientation angles of the linear actuators, provided, for example, by inertial measurement units, only two assembly modes exist that can be calculated analytically.
 
