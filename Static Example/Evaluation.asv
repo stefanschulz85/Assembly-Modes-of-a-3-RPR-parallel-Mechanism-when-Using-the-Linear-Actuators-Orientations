@@ -1,0 +1,111 @@
+%% Performance Evaluation of a Sensor Concept
+%  for Solving the Direct Kinematics Problem
+%  of General Planar 3-RPR Parallel Mechanisms
+%  by Using Solely the Linear Actuators’ Orientations
+
+% In this Matlab-Script, you can evaluate ten different static poses of the
+% 3-RPR parallel mechanism with the following base and manipulator platform
+% joints' positions. 
+% A1=[0 0; 170 0; 280 0]'; %% Base Platform
+% B1=[0 0; 70 0; 100 0]'; %% Manipulator Platform
+% The Matlab-Script reads the measured linear actuators orientation angles
+% for the static poses and then calculates the results with the Matlab
+% Function "Orientation_Based_Solution.m".
+% The Matlab-Script then compares the results of the raw linear actuators
+% orientation angles, the Kalman-filtered orientation angles, and the
+% Complementary filtered orientation angles with the actual results that 
+% were obtained by image processing.
+% The investigated pose, and the errors for each axis as boxplots were displayed in a ser. 
+
+clear all
+close all
+clc
+
+A1=[0 0; 170 0; 280 0]'; %% Base Platform
+B1=[0 0; 70 0; 100 0]'; %% Manipulator Platform
+
+for experiment=1:10
+
+posenr=experiment;
+pfad=['Measurement_Results/pose_',num2str(posenr),'.mat'];
+load(pfad);
+gamma=0;
+x=0;
+y=0;
+
+OB_real=[real_pose(1:2)]';
+gamma_real=real_pose(3);
+
+Rot=Rot2D(gamma_real);
+
+for i=1:3
+    OB_i(:,i)=Rot*B1(:,i)+OB_real(:);
+end
+
+% Abstand zwischen Basis- und Arbeitsplattform 
+AB_i = OB_i-A1;
+
+figure('Name',['Experimental Results ',num2str(experiment)]);
+subplot(1,4,1)
+for i=1:3
+plot(A1(1,i),A1(2,i),'k*')
+hold on
+plot(OB_i(1,i),OB_i(2,i),'k*')
+line([A1(1,i) OB_i(1,i)],[A1(2,i) OB_i(2,i)],'color','black')
+end
+plot(A1(1,1),A1(2,1),'k*')
+plot(OB_real(1,1),OB_real(2,1),'k*')
+line([A1(1,1) A1(1,3)],[A1(2,1) A1(2,3)],'color','black')
+line([OB_i(1,1) OB_i(1,3)],[OB_i(2,1) OB_i(2,3)],'color','black')
+grid on
+axis equal
+xlabel('x (mm)')
+ylabel('y(mm)')
+title(['Inverse Kinematic Solution']);
+
+c=[A1(1,2)-A1(1,1) A1(1,3)-A1(1,1)];
+d=[A1(2,2)-A1(2,1) A1(2,3)-A1(2,1)];
+l=[B1(1,2)-B1(1,1) B1(1,3)-B1(1,2)];
+
+for s=1:3
+    for t=1:size(phi_1,1)
+    A = tan(phi_1(t,s)*pi/180);
+    B = tan(phi_2(t,s)*pi/180);
+    C = tan(phi_3(t,s)*pi/180);
+
+    [pose] = Orientation_Based_Solution(A,B,C,c,d,l);
+
+    solution1(:,t,s)=pose(1,:);
+    solution2(:,t,s)=pose(2,:);
+    end
+    
+    Mean_Error(:,experiment,s)      =[mean(solution1(1,:)-real_pose(1)); mean(solution1(2,:)-real_pose(2)); mean(solution1(3,:)-real_pose(3))];
+    Variance_Error(:,experiment,s)  =[var(solution1(1,:)-real_pose(1)); var(solution1(2,:)-real_pose(2)); var(solution1(3,:)-real_pose(3))];
+end
+% 
+% 
+subplot(1,4,2)
+boxplot([solution1(1,:,1)'-real_pose(1) solution1(1,:,2)'-real_pose(1)' solution1(1,:,3)'-real_pose(1)'])
+title(['\Delta x (mm)'])
+set(gca,'XTickLabel',{'raw','Kalman','complementary'})
+subplot(1,4,3)
+boxplot([solution1(2,:,1)'-real_pose(2) solution1(2,:,2)'-real_pose(2)' solution1(2,:,3)'-real_pose(2)'])
+title(['\Delta y (mm)'])
+set(gca,'XTickLabel',{'raw','Kalman','complementary'})
+subplot(1,4,4)
+boxplot([solution1(3,:,1)'-real_pose(3) solution1(3,:,2)'-real_pose(3)' solution1(3,:,3)'-real_pose(3)'])
+title(['\Delta \gamma (°)'])
+set(gca,'XTickLabel',{'raw','Kalman','complementary'})
+end
+
+
+function R = Rot2D(alpha_A) 
+
+a_A = pi/180*alpha_A;
+
+
+% R =     [cos(a_A) sin(a_A); -sin(a_A) cos(a_A)];
+R =     [cos(a_A) -sin(a_A); sin(a_A) cos(a_A)];
+
+end
+
