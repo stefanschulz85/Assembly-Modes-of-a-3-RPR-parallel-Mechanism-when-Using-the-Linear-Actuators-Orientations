@@ -10,15 +10,15 @@ D =sqrt(-I^2*(-G+E^2/I^4));
 
 for t=1:2
     if t==1
-        phi(t)=-atan2((H*D-E)/(G*I),(F+D)/G)*180/pi;
+        gamma(t)=-atan2((H*D-E)/(G*I),(F+D)/G)*180/pi;
     elseif t==2
-        phi(t)=-atan2((-H*D-E)/(G*I),(F-D)/G)*180/pi;    
+        gamma(t)=-atan2((-H*D-E)/(G*I),(F-D)/G)*180/pi;    
     end
-    x(t) = ((l(1)+l(2))*(-sin(phi(t)*pi/180)+C*cos(phi(t)*pi/180))-C*c(2)+d(2))/(A-C);
+    x(t) = ((l(1)+l(2))*(-sin(gamma(t)*pi/180)+C*cos(gamma(t)*pi/180))-C*c(2)+d(2))/(A-C);
     y(t) = A*x(t);
 end
 
-pose=[x' y' phi'];
+pose=[x' y' gamma'];
 
 end
 
