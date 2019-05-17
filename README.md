@@ -59,4 +59,5 @@ In the folder "Static Example", there are two files ("Evaluation.m" and "Orienta
 In the runable matlab file "Evaluation.m", you can evaluate the en different static poses of the 3-RPR parallel mechanism with given base and manipulator platform joints' positions. The matlab file reads the measured linear actuators orientation angles for the static poses and then calculates the results with the matlab function "Orientation_Based_Solution.m". The matlab file then compares the results of the raw linear actuators orientation angles, the Kalman-filtered orientation angles, and the complementary filtered orientation angles with the actual results that were obtained by image processing. The investigated pose, and the errors for each axis as boxplots were displayed in a separate figures for every investigated pose. 
 
 In the folder "picture", there are relevant pictures shown, for example in this "readme.md" file.
+
 The folder "video" contains the demonstration video mentioned above. Sadly it cannot be played in this "readme.md" file and neither by clicking on the video in the folder. By downloading it, as mentioned above, it is however possible.
